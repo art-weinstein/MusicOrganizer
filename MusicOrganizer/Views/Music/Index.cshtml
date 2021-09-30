@@ -1,0 +1,18 @@
+@using MusicOrganizer.Models;
+
+<h1>Disc Collection</h1>
+@if (Model.Count == 0)
+{
+  <p>There are no discs in the collection yet!</p>
+}
+
+<ul>
+  @foreach (Disc disc in Model)
+  {
+    <li>
+    <a href="/music/@disc.Id">@disc.DiscArtist</a>
+    </li>
+  }
+</ul>
+
+<a href="/music/new">Add a new disc</a>
